@@ -1,6 +1,7 @@
 # Space Clock
 
 Un reloj interactivo con una temática espacial, creado con HTML, CSS y JavaScript.
+![Funcionamiento del Space Clock](assets/space-clock.gif)
 
 ## Tabla de Contenidos
 - [Descripción](#descripción)
@@ -14,7 +15,7 @@ Un reloj interactivo con una temática espacial, creado con HTML, CSS y JavaScri
 ## Descripción
 
 Space Clock es un proyecto que combina la funcionalidad de un reloj con una apariencia futurista y elementos interactivos relacionados con el espacio. El reloj está rodeado por planetas que orbitan el horario, creando un efecto visual cautivador. Además, el reloj reacciona al pasar el mouse sobre él, mostrando un efecto de distorsión y pulsación para simular un efecto gravitatorio.
-![Funcionamiento del Space Clock](assets/space-clock.gif)
+
 
 ## Características
 
@@ -37,6 +38,7 @@ Space Clock es un proyecto que combina la funcionalidad de un reloj con una apar
    git clone https://github.com/Facu14Carrizo/space-clock.git
    
 2. Abre el archivo index.html en tu navegador web.
+   O abrelo en un servidor web como Live Server.
 ## Uso
 
 Observa cómo los planetas orbitan alrededor del reloj.
