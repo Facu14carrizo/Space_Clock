@@ -180,3 +180,26 @@ body {
 #author:hover {
     filter: blur(1px) brightness(0.8); /* Cambia el desenfoque y brillo al pasar el mouse */
 }
+
+/* Efecto cometa en el mouse */
+#mouse-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999; /* siempre por encima de todo */
+}
