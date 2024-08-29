@@ -53,10 +53,10 @@ watch.addEventListener('mouseout', () => {
 
 
 // Musiquita
-const rocketSound = new Audio('rocket-sound.mp3');
+const spaceSound = new Audio('Assets/Interstellar Main Theme - Extra Extended - Soundtrack by  Hans Zimmer.mp3');
 
 watch.addEventListener('click', () => {
-    rocketSound.play();
+    spaceSound.play();
 });
 
 // Efecto Mouse
