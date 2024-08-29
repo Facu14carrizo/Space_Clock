@@ -6,7 +6,7 @@ body {
     place-items: center;
     overflow: hidden;
     background: black;
-    position: relative; /* Necesario para el posicionamiento de las estrellas */
+    position: relative; 
 }
 
 #watch {
@@ -15,16 +15,31 @@ body {
     justify-content: center;
     width: 200px;
     height: 200px;
-    border: 2px solid #FFD700; /* Color dorado */
-    color: #FFD700; /* Color dorado */
+    border: 2px solid #FFD700; 
+    color: #FFD700; /* Color Reloj */
     border-radius: 50%;
-    font-family: 'Orbitron', sans-serif; /* Fuente futurista */
-    font-size: 2rem; /* Tamaño de la fuente */
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 2rem; 
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Efecto de resplandor */
-    position: relative; /* Para que las estrellas queden detrás */
-    z-index: 1; /* Asegura que el reloj esté por encima de las estrellas */
+    position: relative; 
+    z-index: 2; /* Asegura que el reloj esté por encima de las estrellas */
+    background-color: black; /* Fondo negro dentro del reloj */
 }
 
+#watch {
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out; /* Transiciones suaves para el estado normal */
+}
+
+#watch.distorted {
+    transform: scale(1.1) rotate(5deg); /* Efecto de distorsión */
+    filter: blur(5px) brightness(0.8); /* Efecto de desenfoque y brillo */
+}
+
+/* Efecto al pasar el mouse */
+#watch:hover {
+    transform: scale(1.1) rotate(2160deg); /* Mantiene el efecto de distorsión al pasar el mouse */
+    filter: blur(5px) brightness(0.8); /* Mantiene el desenfoque y brillo al pasar el mouse */
+}
 
 /* Estrellas */
 .star {
@@ -32,6 +47,7 @@ body {
     background: white; /* Color de las estrellas */
     border-radius: 50%;
     opacity: 0.8; /* Transparencia de las estrellas */
+    z-index: 1;
 }
 
 /* Generar estrellas */
@@ -41,11 +57,12 @@ body {
     100% { opacity: 0.5; }
 }
 
+
 .star {
     animation: twinkle 1.5s infinite alternate; /* Animación de parpadeo */
 }
 
-/* Contenedor de planetas */
+/* Container de planetas */
 #planet-container {
     display: flex;
     align-items: center;
@@ -56,6 +73,7 @@ body {
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
+    z-index: 2;
 }
 
 /* Planetas */
@@ -63,78 +81,79 @@ body {
     position: absolute;
     border-radius: 50%;
     animation: orbit 10s linear infinite;
+    z-index: 2;
 }
 
 
 /* Mercurio */
 .planet-1 {
-    width: 10px; /* Tamaño en píxeles */
-    height: 10px; /* Tamaño en píxeles */
-    background: #8B8B83; /* Gris */
+    width: 10px; 
+    height: 10px; 
+    background: #8B8B83; 
     animation: orbit 10s linear infinite; /* Velocidad de órbita */
 }
 
 /* Venus */
 .planet-2 {
-    width: 20px; /* Tamaño en píxeles */
-    height: 20px; /* Tamaño en píxeles */
-    background: #FFD700; /* Amarillo */
+    width: 20px; 
+    height: 20px; 
+    background: #e6a605; 
     animation: orbit 15s linear infinite; /* Velocidad de órbita */
 }
 
 /* Tierra */
 .planet-3 {
-    width: 22px; /* Tamaño en píxeles */
-    height: 22px; /* Tamaño en píxeles */
-    background: #00BFFF; /* Azul */
+    width: 22px; 
+    height: 22px; 
+    background: #00BFFF; 
     animation: orbit 20s linear infinite; /* Velocidad de órbita */
 }
 
 /* Marte */
 .planet-4 {
-    width: 15px; /* Tamaño en píxeles */
-    height: 15px; /* Tamaño en píxeles */
-    background: #FF4500; /* Rojo */
+    width: 15px; 
+    height: 15px; 
+    background: #d2430e; 
     animation: orbit 30s linear infinite; /* Velocidad de órbita */
 }
 
 /* Júpiter */
 .planet-5 {
-    width: 50px; /* Tamaño en píxeles */
-    height: 50px; /* Tamaño en píxeles */
-    background: #D2691E; /* Marrón */
+    width: 50px; 
+    height: 50px; 
+    background: #D2691E; 
     animation: orbit 120s linear infinite; /* Velocidad de órbita */
 }
 
 /* Saturno */
 .planet-6 {
-    width: 42px; /* Tamaño en píxeles */
-    height: 42px; /* Tamaño en píxeles */
-    background: #FFD700; /* Amarillo */
+    width: 42px; 
+    height: 42px; 
+    background: #a99214; 
     animation: orbit 150s linear infinite; /* Velocidad de órbita */
 }
 
 /* Urano */
 .planet-7 {
-    width: 30px; /* Tamaño en píxeles */
-    height: 30px; /* Tamaño en píxeles */
-    background: #00CED1; /* Turquesa */
+    width: 30px; 
+    height: 30px; 
+    background: #8de2e4; 
     animation: orbit 200s linear infinite; /* Velocidad de órbita */
 }
 
 /* Neptuno */
 .planet-8 {
-    width: 30px; /* Tamaño en píxeles */
-    height: 30px; /* Tamaño en píxeles */
-    background: #0000FF; /* Azul */
+    width: 30px; 
+    height: 30px; 
+    background: #0000FF;
     animation: orbit 250s linear infinite; /* Velocidad de órbita */
 }
 
-/* Planeta enano (Plutón) */
+/* Plutón (Planeta enano) */
 .planet-9 {
-    width: 12px; /* Tamaño en píxeles */
-    height: 12px; /* Tamaño en píxeles */
-    background: #B0C4DE; /* Azul claro */
+    width: 12px; 
+    height: 12px; 
+    background: #e28d72; 
     animation: orbit 300s linear infinite; /* Velocidad de órbita */
 }
 
@@ -142,4 +161,22 @@ body {
 @keyframes orbit {
     0% { transform: rotate(0deg) translateX(140px); }
     100% { transform: rotate(360deg) translateX(140px); }
+}
+
+/* Creditos al autor */
+#author {
+    position: absolute; 
+    bottom: 20px; /* Distancia desde la parte inferior */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición para centrarlo */
+    color: orange; 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 1.5rem; 
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Efecto de resplandor */
+    z-index: 2; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Efecto al pasar el mouse en el autor */
+#author:hover {
+    filter: blur(1px) brightness(0.8); /* Cambia el desenfoque y brillo al pasar el mouse */
 }

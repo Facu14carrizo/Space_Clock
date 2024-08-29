@@ -1,3 +1,4 @@
+// Marcar la hora
 function currenTime() {
     let date = new Date();
     let hh = date.getHours();
@@ -33,17 +34,27 @@ function createStars(numStars) {
     }
 }
 
-// Llama a la función para crear 100 estrellas
+// Llama a la función para crear 900 estrellas
 createStars(900);
 
+
+//Efecto distorcion por gravedad
 const watch = document.getElementById('watch');
 
 watch.addEventListener('mouseover', () => {
     watch.classList.add('distorted');
-    // Muestra información adicional
+    // Muestra hora
 });
 
 watch.addEventListener('mouseout', () => {
     watch.classList.remove('distorted');
-    // Oculta información adicional
+    // Oculta hora
+});
+
+
+// Musiquita
+const rocketSound = new Audio('rocket-sound.mp3');
+
+watch.addEventListener('click', () => {
+    rocketSound.play();
 });
