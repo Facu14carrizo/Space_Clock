@@ -1,7 +1,7 @@
 # Space Clock
 
 Un reloj interactivo con una temática espacial, creado con HTML, CSS y JavaScript.
-![Funcionamiento del Space Clock](assets/space-clock.gif)
+![Funcionamiento del Space Clock](Assets/SpaceClock.gif)
 
 ## Tabla de Contenidos
 - [Descripción](#descripción)
